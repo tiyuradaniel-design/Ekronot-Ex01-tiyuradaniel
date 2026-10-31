@@ -1,4 +1,3 @@
-#include "Queue.h"
 #include <iostream>
 
 typedef struct Queue
@@ -21,6 +20,16 @@ void cleanQueue(Queue* q)
 	q->arr = nullptr;
 	q->last = -1;
 	q->maxSize = 0;
+}
+
+bool isEmpty(Queue* q) 
+{
+	return q->last == -1;
+}
+
+bool isFull(Queue* q) 
+{
+	return q->last == q->maxSize - 1;
 }
 
 void enqueue(Queue* q, unsigned int newValue) 
@@ -48,14 +57,4 @@ int dequeue(Queue* q)
 	}
 	q->last--;
 	return value;
-}
-
-bool isEmpty(Queue* q) 
-{
-	return q->last == -1;
-}
-
-bool isFull(Queue* q) 
-{
-	return q->last == q->maxSize - 1;
 }

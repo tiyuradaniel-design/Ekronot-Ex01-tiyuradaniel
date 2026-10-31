@@ -19,8 +19,8 @@ int* reverse10()
 	int* nums = new int[10];
 	for (int i = 0; i < 10; ++i)
 	{
-		cout << "\nenter value for element: " << endl;
-		cin >> nums[i];
+		std::cout << "\nenter value for element: " << std::endl;
+		std::cin >> nums[i];
 	}
 	reverse(nums, 10);
 	return nums;

@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include "LinkedList.h"
+
 /* a positive-integer value stack, with no size limit */
 typedef struct Stack
 {
@@ -9,8 +11,8 @@ typedef struct Stack
 void push(Stack* s, unsigned int element)//insert element to the top of the stack
 {
 	linkedList* newNode = new linkedList;
-	newNode->value = element;
-	newNode->next = s->head;
+	newNode->data = element;
+	newNode->nextnode = s->head;
 	s->head = newNode;
 }
 
@@ -20,11 +22,11 @@ int pop(Stack* s) // remove element from the top of the stack
 	{
 		return -1; // Stack is empty
 	}
-	int value = s->head->value;
+	int value = s->head->data;
 	linkedList* temp = s->head;
-	s->head = s->head->next;
+	s->head = s->head->nextnode;
 	delete temp;
-	return;
+	return value;
 }
 
 void initStack(Stack* s)
