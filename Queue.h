@@ -1,0 +1,23 @@
+#ifndef QUEUE_H
+#include "Queue.cpp"
+#define QUEUE_H
+
+
+/* a queue contains positive integer values. */
+typedef struct Queue
+{
+	int maxSize; // maximum number of elements in the queue
+	int* arr; // array of integers to hold the elements in the queue
+	int last; // index of the last element in the queue
+} Queue;
+
+void initQueue(Queue* q, unsigned int size);
+void cleanQueue(Queue* q);
+
+void enqueue(Queue* q, unsigned int newValue);
+int dequeue(Queue* q); // return element in top of queue, or -1 if empty
+
+bool isEmpty(Queue* s);
+bool isFull(Queue* s);
+
+#endif /* QUEUE_H */
